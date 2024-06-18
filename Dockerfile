@@ -11,3 +11,5 @@ RUN apt-get -y update \
 && docker-php-ext-install intl
 # Copy php.ini-devlopment file into the container
 COPY ./config/php /usr/local/etc/php/
+# Give permission to folder
+RUN chmod -R 777 /var/www/html
