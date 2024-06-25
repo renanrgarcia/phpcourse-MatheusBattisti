@@ -1,11 +1,12 @@
-# If structure 
+# Control Structures
+## If structure 
 ``` php
 if (condition) {
   // code
 }
 ```
 
-# Nested if structure
+## Nested if structure
 ``` php
 if (condition) {
   if (condition) {
@@ -15,7 +16,7 @@ if (condition) {
 } 
 ```
 
-# If/Else structure
+## If/Else structure
 ``` php
 if (condition) {
   // code
@@ -24,7 +25,7 @@ if (condition) {
 }
 ```
 
-# Else If structure (Different conditions)
+## Else If structure (Different conditions)
 ``` php
 if (condition) {
   // code
@@ -35,7 +36,7 @@ if (condition) {
 }
 ```
 
-# Switch structure
+## Switch structure
 ``` php
 switch ($variable) {
   case $value1:
