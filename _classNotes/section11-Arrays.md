@@ -74,3 +74,4 @@
 
 ## Exclude a value from an array
 - To exclude one item from an array: 
+  - `array_pop($array);`: Removes the last element from an array.
