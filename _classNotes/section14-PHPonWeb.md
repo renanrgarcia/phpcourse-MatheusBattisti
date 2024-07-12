@@ -53,4 +53,28 @@
 
 ## Form validation
 - You can validate on HTML or JS, but is better to do this on backend
- 
+
+## Stateless requests
+- HTTP requests are stateless, for each request, a new session is created
+- To avoid this, you can use cookies. But some servers do not allow cookies or disable them
+
+## Cookies
+- Cookies are stored on the server
+- `setcookie('name', 'value', time() + 3600)`: set a cookie with an expiration time
+  - Need to be called before the <body>, sent data as header
+- You can access it using `$_COOKIE`
+
+## Sessions
+- You can create a variable that persists between requests, for different pages and visits
+- Uses cookies resources by default, if disabled, uses URLs 
+- Examples: authentication, shopping cart, payment
+- They are stored on the server or on the client (PC or mobile)
+  - See on php.ini: session.save_path
+- Initiate: `session_start()`
+- Define a variable: `$_SESSION['name'] = 'value'`
+- On another session page: `print_r($_SESSION)` to see all session variables
+
+## SSL (Secure Socket Layer)
+- PHP doesn't use SSL by default and doesn't have leverage on it
+- But we must enshure that the data are encrypted
+- We must use HTTPS on forms and URLs
