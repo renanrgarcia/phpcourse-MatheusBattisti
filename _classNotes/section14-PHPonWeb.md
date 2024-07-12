@@ -35,3 +35,22 @@
 ## Self-processment
 - $_SERVER['REQUEST_METHOD'] // GET or POST
   - You can process both requests on the same page using `if` statement
+
+## Form filling
+- After checking if there is data sent and received from the form, you can use it on the value of the input
+  - Example: `<input type="text" value="<?php echo $name ?>">`
+
+## Multivalue parameters
+- Multiple values can be sent in the same parameter
+  - Example: `<input type="checkbox" name="ingredients[]" value="Tomato"> Tomato`
+
+## File upload
+- You have to change the `enctype` to `multipart/form-data` in the form
+  - Example: `<form method="POST" enctype="multipart/form-data">`
+- Add the file `input` in the form
+  - Example: `<input type="file" name="image">`
+- After the upload, you can access its information by using `$_FILES`
+
+## Form validation
+- You can validate on HTML or JS, but is better to do this on backend
+ 
