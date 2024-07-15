@@ -27,5 +27,4 @@
         <li><a href="<?= $BASE_URL ?>/contact.php" class="nav-link">Contact</a></li>
       </ul>
     </nav>
-    
   </header>

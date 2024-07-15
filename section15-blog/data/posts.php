@@ -29,4 +29,11 @@
       'tags' => ['programação', 'PHP', 'lógica de programação'],
       'img' => 'prog-4.jpg'
     ],
+    [
+      'id' => 5,
+      'title' => 'A importância da lógica de programação',
+      'description' => 'A lógica de programação é o ponto inicial de muitos estudantes de programação, será que é importante?',
+      'tags' => ['lógica', 'programação', 'algoritmos'],
+      'img' => 'prog-5.jpg'
+    ],
   ];
