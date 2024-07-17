@@ -26,4 +26,5 @@
 
 <?php 
   include_once("templates/footer.php");
+  $test = [3, 5];
 ?>

@@ -36,6 +36,9 @@ services:
     ports:
       # MySQL port
       - "3306:3306"
+    volumes:
+      # MySQL data volume
+      - ./config/mysql-data/:/var/lib/mysql
 
   # PhpMyAdmin Service
   phpmyadmin:
@@ -50,3 +53,4 @@ services:
       PMA_HOST: database-container 
       # Set the MySQL root password to open PhpMyAdmin on the web
       MYSQL_ROOT_PASSWORD: php_mysql_pass
+    
