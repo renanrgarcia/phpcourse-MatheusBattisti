@@ -62,3 +62,10 @@
 ## Connection with mySQLi
 - mysqli_connect(): less used, not focus on POO
 - `$conn = mysqli_connect('host', 'user', 'password', 'database');` // more used, focus on POO
+  - On docker environment: `$conn = mysqli_connect('database_container', 'root', 'password', 'database_name');`
+- To show the errors (it's common to use it in production, when the debug mode is off):  
+  - ```php
+      if($conn->connect_errno) {
+        echo "Connection failed: " . mysqli_connect_error(); // or $conn->connect_error
+      }
+    ```
