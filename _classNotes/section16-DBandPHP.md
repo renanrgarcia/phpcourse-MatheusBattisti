@@ -69,3 +69,11 @@
         echo "Connection failed: " . mysqli_connect_error(); // or $conn->connect_error
       }
     ```
+
+## Making queries
+- ```php
+  $sql = "SELECT * FROM table_name"; // any SQL query
+  $result = $conn->query($sql);
+  print_r($result);
+  $conn->close(); // close the connection
+  ```
