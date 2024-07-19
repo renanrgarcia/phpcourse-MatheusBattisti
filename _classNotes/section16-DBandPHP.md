@@ -101,8 +101,9 @@
 - ```php
   $sql = "SELECT * FROM table_name";
   $result = $conn->query($sql);
-  $list = $result->fetch_all(MYSQLI_ASSOC); // list all rows
+  $list = $result->fetch_all(); // list all rows
   $row = $result->fetch_assoc(); // list one row
+  $conn->close();
 
   print_r($list);
   print_r($row);
@@ -111,12 +112,36 @@
 ## Prepared statements
 - Used to prevent SQL injection and better performance
 - Creates a query with placeholders
+
+### Inserting with prepared statements
 - Steps: prepare -> bind_param -> execute;
   - There is a variable to have these parameters: `$stmt` (called `statement`). Its connection must be closed when done.
 - ```php
   $stmt = $conn->prepare("INSERT INTO table_name (column1, column2, column3) VALUES (?, ?, ?)");
   $stmt->bind_param("sss", $column1, $column2, $column3); // s = string, i = integer, d = double
   $stmt->execute();
-  $stmt->close();
+  $conn->close();
+  ```
+
+### Selecting with prepared statements
+- Steps: prepare -> bind_param -> execute -> get_result -> fetch;
+  - Its connection must be closed when done.
+- ```php // Various rows
+  $stmt = $conn->prepare("SELECT * FROM table_name WHERE column > ?");
+  $stmt->bind_param("i", $column); 
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $data = $result->fetch_all(); 
+  print_r($data);
+  $conn->close();
+  ```
+- ```php // One row
+  $stmt = $conn->prepare("SELECT * FROM table_name WHERE column = ?");
+  $stmt->bind_param("i", $column); 
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $row = $result->fetch_row();
+  print_r($row);
+  $conn->close();
   ```
 
