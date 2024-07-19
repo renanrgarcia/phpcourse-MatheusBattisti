@@ -145,3 +145,5 @@
   $conn->close();
   ```
 
+### Updating with prepared statements
+- Steps: prepare -> bind_param -> execute;
