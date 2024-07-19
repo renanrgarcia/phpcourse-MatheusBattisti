@@ -77,3 +77,17 @@
   print_r($result);
   $conn->close(); // close the connection
   ```
+
+## Create and delete tables
+- ```php // create a table
+  $sql = "CREATE TABLE table_name (
+    column_name1 data_type(length),
+    column_name2 data_type
+    )";
+  $conn->query($sql);
+  ```
+- ```php // delete a table
+  $sql = "DROP TABLE table_name";
+  $conn->query($sql);
+  ```
+
