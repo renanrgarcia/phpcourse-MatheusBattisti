@@ -147,3 +147,7 @@
 
 ### Updating with prepared statements
 - Steps: prepare -> bind_param -> execute;
+
+
+## Connection with PDO
+- Enable in php.ini: `php_pdo` and `php_pdo_mysql`
