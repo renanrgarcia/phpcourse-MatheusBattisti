@@ -107,3 +107,16 @@
   print_r($list);
   print_r($row);
   ```
+
+## Prepared statements
+- Used to prevent SQL injection and better performance
+- Creates a query with placeholders
+- Steps: prepare -> bind_param -> execute;
+  - There is a variable to have these parameters: `$stmt` (called `statement`). Its connection must be closed when done.
+- ```php
+  $stmt = $conn->prepare("INSERT INTO table_name (column1, column2, column3) VALUES (?, ?, ?)");
+  $stmt->bind_param("sss", $column1, $column2, $column3); // s = string, i = integer, d = double
+  $stmt->execute();
+  $stmt->close();
+  ```
+
