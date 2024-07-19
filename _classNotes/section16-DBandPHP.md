@@ -91,3 +91,8 @@
   $conn->query($sql);
   ```
 
+## Inserting data
+- ```php
+  $sql = "INSERT INTO table_name (column1, column2, column3) VALUES (value1, value2, value3)"; // if using variables, scape "" with '' in the query
+  $conn->query($sql);
+  ```
