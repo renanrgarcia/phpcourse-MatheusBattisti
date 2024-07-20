@@ -176,4 +176,20 @@
   $stmt->bindParam(':id', $id);
   $stmt->execute();
   ```
-### 
+### Selecting with PDO
+- Order: prepare -> bind_param -> execute -> get_result -> fetch
+- ```php // Various rows
+  $stmt = $conn->prepare("SELECT * FROM table_name WHERE column > :column");
+  $stmt->bindParam(':column', $column); 
+  $stmt->execute();
+  $data = $stmt->fetch_all(PDO::FETCH_ASSOC); // PDO::FETCH_ASSOC > transform to assoc array 
+  print_r($data);
+  ```
+
+- ```php // One row
+  $stmt = $conn->prepare("SELECT * FROM table_name WHERE column = :column");
+  $stmt->bindParam(':column', $column); 
+  $stmt->execute();
+  $row = $stmt->fetch(PDO::FETCH_ASSOC);
+  print_r($row);
+  ```
