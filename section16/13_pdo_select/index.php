@@ -7,8 +7,6 @@
   $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
 
   // Query
-  $name = "Submarine";
-  $description = "Yellow Submarine";
   $id = 5;
 
   // One row

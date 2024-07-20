@@ -193,3 +193,11 @@
   $row = $stmt->fetch(PDO::FETCH_ASSOC);
   print_r($row);
   ```
+
+### Deleting with PDO
+- Order: prepare -> bind_param -> execute
+- ```php
+  $stmt = $conn->prepare("DELETE FROM table_name WHERE id = :id");
+  $stmt->bindParam(':id', $id);
+  $stmt->execute();
+  ```
