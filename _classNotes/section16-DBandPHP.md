@@ -169,3 +169,11 @@
 
 ### Updating with PDO
 - Order: prepare -> bind_param -> execute 
+- ```php
+  $stmt = $conn->prepare("UPDATE table_name SET column1 = :column1, column2 = :column2 WHERE id = :id");
+  $stmt->bindParam(':column1', $column1);
+  $stmt->bindParam(':column2', $column2);
+  $stmt->bindParam(':id', $id);
+  $stmt->execute();
+  ```
+### 
