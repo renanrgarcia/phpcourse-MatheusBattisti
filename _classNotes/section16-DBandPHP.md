@@ -151,3 +151,6 @@
 
 ## Connection with PDO
 - Enable in php.ini: `php_pdo` and `php_pdo_mysql`
+- `$conn = new PDO("database_type:host=host;dbname=database_name", "user", "password")`;
+  - Ex: `$conn = new PDO("mysql:host=localhost;dbname=myDB", "username", "password");`
+  - On docker environment: `$conn = new PDO("mysql:host=mysql_container;dbname=myDB", "root", "password");`
