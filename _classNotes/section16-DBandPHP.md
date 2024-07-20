@@ -154,3 +154,18 @@
 - `$conn = new PDO("database_type:host=host;dbname=database_name", "user", "password")`;
   - Ex: `$conn = new PDO("mysql:host=localhost;dbname=myDB", "username", "password");`
   - On docker environment: `$conn = new PDO("mysql:host=mysql_container;dbname=myDB", "root", "password");`
+- Also used here the prepared statements
+- It's important to note that closing the connection is not always necessary, as PDO automatically handles the connection management for you.
+  - To close connection: `$conn = null;` or `unset($pdo);`
+
+### Inserting with PDO
+- Order: prepare -> bind_param -> execute
+- ```php
+  $stmt = $conn->prepare("INSERT INTO table_name (column1, column2) VALUES (:column1, :column2)");
+  $stmt->bindParam(':column1', $column1);
+  $stmt->bindParam(':column2', $column2);
+  $stmt->execute();
+  ```
+
+### Updating with PDO
+- Order: prepare -> bind_param -> execute 
