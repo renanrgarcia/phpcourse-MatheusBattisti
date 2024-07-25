@@ -30,7 +30,7 @@ services:
       # Create your MySQL database user
       MYSQL_USER: php_test_user
       # Create a sample MySQL database
-      MYSQL_DATABASE: php_mysql_db
+      MYSQL_DATABASE: contact_agenda
       # Add the password for the MySQL user
       MYSQL_PASSWORD: php_user_pass
     ports:
@@ -39,6 +39,8 @@ services:
     volumes:
       # MySQL data volume
       - ./config/mysql-data/:/var/lib/mysql
+      # Prepare init.sql
+      - ./config/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   # PhpMyAdmin Service
   phpmyadmin:
