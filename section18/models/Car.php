@@ -48,3 +48,10 @@ class Car
     $this->color = $color;
   }
 }
+
+interface CarDAOInterface
+{
+
+  public function create(Car $car);
+  public function findAll();
+}

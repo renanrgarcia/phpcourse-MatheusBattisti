@@ -1,6 +1,6 @@
 -- Create the database if it doesn't exist
-CREATE DATABASE IF NOT EXISTS dao-test;
-USE dao-test;
+CREATE DATABASE IF NOT EXISTS daotest;
+USE daotest;
 
 -- Create tables
 CREATE TABLE IF NOT EXISTS cars (

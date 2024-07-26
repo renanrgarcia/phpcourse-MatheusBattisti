@@ -30,7 +30,7 @@ services:
       # Create your MySQL database user
       MYSQL_USER: php_test_user
       # Create a sample MySQL database
-      MYSQL_DATABASE: contact_agenda
+      MYSQL_DATABASE: daotest
       # Add the password for the MySQL user
       MYSQL_PASSWORD: php_user_pass
     ports:
