@@ -28,6 +28,7 @@ if (!empty($data)) {
       $error = $e->getMessage();
       echo "Error: $error";
     }
+    // Edit contact
   } else if ($data["type"] === "edit") {
     $name = $data["name"];
     $phone = $data["phone"];
@@ -54,9 +55,29 @@ if (!empty($data)) {
       $error = $e->getMessage();
       echo "Error: $error";
     }
+
+    // Delete contact
+  } else if ($data["type"] === "delete") {
+    $id = $data["id"];
+
+    $query = "DELETE FROM contacts WHERE id = :id";
+
+    $stmt = $conn->prepare($query);
+
+    $stmt->bindParam(":id", $id);
+
+    try {
+      $stmt->execute();
+      $_SESSION["msg"] = "Contact deleted successfully!";
+    } catch (PDOException $e) {
+      $error = $e->getMessage();
+      echo "Error: $error";
+    }
   }
+
   // Redirect home
   header("Location:" . $BASE_URL . "/../index.php");
+
   // Data selection
 } else {
   $id;
