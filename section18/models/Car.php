@@ -35,7 +35,7 @@ class Car
 
   public function setKm($km)
   {
-    $this->km = $km;
+    $this->km = intval($km);
   }
 
   public function getColor()
